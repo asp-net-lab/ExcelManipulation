@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Excel File Upload</h2>
+<br />
+<div>
+    <p>Excel Template:</p>
+    <div>
+        <a href="~/Content/Files/Example_Excel_Upload.xlsx" class="btn btn-primary"><i class="fa fa-cloud-download"></i> Excel Template</a>
+    </div>
+</div>
+<br /><br />
+<div>
+    <p>Upload Excel Template</p>
+    @using (Html.BeginForm("UploadExcelFile", "Excel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div>
+            <input class="btn btn-success" type="file" name="muhSpecialFileName" value="choose file" />
+        </div>
+            <br />
+            <div>
+                <input class="btn btn-primary" type="submit" value="Upload Template" />
+            </div>
+    }
+</div>
